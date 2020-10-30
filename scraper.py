@@ -39,5 +39,6 @@ def find_biggest(sc):
 
     s.enter(60, 1, find_biggest, (sc,))
 
+r.expire("Hash","Time","Amount (BTC)","Amount (USD)")
 s.enter(60, 1, find_biggest, (s,))
 s.run()
