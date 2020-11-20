@@ -38,8 +38,7 @@ def find_biggest(sc):
         col_hash.insert_one(myhash)
         
     r.mset({"Hash": df["Hash"], "Time": df["Time"], "Amount (BTC)": df["Amount (BTC)"], "Amount (USD)": df["Amount (USD)"]})
-    db.collection.insert_many(df.to_dict('records'))
-
+    
     s.enter(60, 1, find_biggest, (sc,))
 
 r.expire("Hash","Time","Amount (BTC)","Amount (USD)")
