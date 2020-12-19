@@ -5,7 +5,7 @@ import re
 import sched, time
 import pandas as pd
 import redis
-r = redis.Redis()
+r = redis.Redis(host='localhost', port=8080)
 s = sched.scheduler(time.time, time.sleep)
 
 def find_biggest(sc):
